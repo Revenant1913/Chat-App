@@ -1,7 +1,8 @@
 import { query, collection, onSnapshot, orderBy, QuerySnapshot } from 'firebase/firestore';
 import React, {useState, useEffect, useRef} from 'react';
 import Message from './Message';
-import {db} from '../firebase'
+import {db} from '../firebase';
+import SendMessage from './SendMessage';
 
 const Chat = () => {
     const [messages, setMessages] = useState([]);
@@ -24,6 +25,8 @@ const Chat = () => {
         {messages && messages.map((message) => (
             <Message key={message.id} message={message}  />
           ))}
+
+          <SendMessage />
       </div>
         
         

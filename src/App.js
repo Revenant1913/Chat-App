@@ -14,7 +14,8 @@ function App() {
   return (
     <div className="App">
      <Navbar />
-     <Chat />
+     {user ? <Chat /> : null}
+    
      
 
     </div>
